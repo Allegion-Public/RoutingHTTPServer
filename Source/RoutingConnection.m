@@ -19,7 +19,6 @@
 }
 
 - (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path {
-
 	if ([http supportsMethod:method])
 		return YES;
 

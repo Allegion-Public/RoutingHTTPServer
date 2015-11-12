@@ -134,7 +134,7 @@
 	Route *route = [[Route alloc] init];
 	NSMutableArray *keys = [NSMutableArray array];
 
-	if ([path length] > 2 && [path characterAtIndex:0] == '{') {
+	if ([path length] > 2 && [path characterAtIndex:0] == ' {') {
 		// This is a custom regular expression, just remove the {}
 		path = [path substringWithRange:NSMakeRange(1, [path length] - 2)];
 	} else {
@@ -250,7 +250,7 @@
 			[self handleRoute:route withRequest:request response:response];
 		} else {
 			// Process the route on the specified queue
-			dispatch_sync(routeQueue, ^{
+			dispatch_sync(routeQueue, ^ {
 				@autoreleasepool {
 					[self handleRoute:route withRequest:request response:response];
 				}
